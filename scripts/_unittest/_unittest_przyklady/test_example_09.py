@@ -1,0 +1,1 @@
+# Automatyczne ładowanie doctestów

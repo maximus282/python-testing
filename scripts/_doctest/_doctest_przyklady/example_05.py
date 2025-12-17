@@ -1,7 +1,4 @@
 # Doctest flags/directives - most common examples
-import doctest
-
-
 def example_ellipsis():
     """
     ELLIPSIS - replaces ... with any text

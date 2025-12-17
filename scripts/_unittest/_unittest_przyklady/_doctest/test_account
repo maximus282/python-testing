@@ -1,0 +1,67 @@
+>>> account = BankAccount("TEST001", 100)
+>>> account.deposit(50)
+150.0
+>>> validate_email("test@example.com")
+True
+>>> acc = BankAccount("123")
+>>> acc.deposit(25)
+25.0
+>>> acc.withdraw(10)
+15.0
+>>> account = BankAccount("12345", 100.0)
+>>> account.account_number
+'12345'
+>>> account.balance
+100.0
+
+>>> account.deposit(50)
+150.0
+>>> account.withdraw(30)
+120.0
+
+>>> account.get_balance()
+120.0
+
+>>> account.withdraw(200)
+Traceback (most recent call last):
+    ...
+ValueError: Insufficient funds
+
+>>> account = BankAccount("54321")
+>>> account.balance
+0.0
+
+>>> account = BankAccount("123", 100)
+>>> account.deposit(25)
+125.0
+
+>>> account.deposit(-10)
+Traceback (most recent call last):
+    ...
+ValueError: Amount must be positive
+
+>>> account = BankAccount("123", 100)
+>>> account.withdraw(25)
+75.0
+>>> account = BankAccount("123", 42.50)
+>>> account.get_balance()
+42.5
+
+>>> validate_email("user@example.com")
+True
+>>> validate_email("test.user+tag@domain.co.uk")
+True
+
+>>> validate_email("invalid")
+False
+>>> validate_email("@example.com")
+False
+>>> validate_email("user@")
+False
+>>> validate_email("")
+False
+
+>>> validate_email("a@b.co")
+True
+>>> validate_email("very.long.email.address@very.long.domain.name.com")
+True

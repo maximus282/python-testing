@@ -1,4 +1,4 @@
-# Doctesty funkcji
+# Unittest funkcje
 def sum_(a: float, b: float) -> float:
     """Add two numbers together.
     

@@ -1,0 +1,1 @@
+# Różne metody uruchamiania testów
