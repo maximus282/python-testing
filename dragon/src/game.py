@@ -9,6 +9,8 @@ Traceback (most recent call last):
 TypeError: Dragon.__init__() missing 1 required positional argument: 'name'
 
 Smok przy tworzeniu ma losowe punkty życia
+>>> dragon.health in range(51, 101)
+True
 
 Ustaw inicjalną pozycję smoka na x=50, y=100
 
@@ -39,12 +41,16 @@ Zadaj 50 obrażeń smokowi
 """
 
 import unittest
+from random import randint
 
 
 class Dragon:
-    def __init__(self, name: str, /) -> None:
-        self.name = name
+    name: str
+    health: int
 
+    def __init__(self, name: str, /) -> None:
+        self.health = randint(50, 100)
+        self.name = name
 
 
 class DragonTest(unittest.TestCase):
@@ -59,3 +65,7 @@ class DragonTest(unittest.TestCase):
     def test_init_no_name(self):
         with self.assertRaises(TypeError):
             Dragon()  # noqa
+
+    def test_health_init(self):
+        dragon = Dragon("Wawelski")
+        self.assertIn(dragon.health, range(50, 101))
