@@ -47,3 +47,11 @@ jobs:
       run: |
         cd ci_cd
         python -m pytest test_calculator.py --cov=calculator --cov-fail-under=80
+
+    # ++++ V3: UPLOAD HTML COVERAGE JAKO ARTEFAKT ++++
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      if: always()  # upload nawet jeśli testy failują
+      with:
+        name: coverage-report
+        path: ci_cd/htmlcov/
