@@ -3,6 +3,10 @@ Stwórz smoka o nazwie "Wawelski"
 >>> dragon = Dragon('Wawelski')
 
 Stworzenie smoka bez nazwy podnosi błąd
+>>> dragon = Dragon()
+Traceback (most recent call last):
+    ...
+TypeError: Dragon.__init__() missing 1 required positional argument: 'name'
 
 Smok przy tworzeniu ma losowe punkty życia
 
@@ -51,3 +55,7 @@ class DragonTest(unittest.TestCase):
     def test_init_name_keyword(self):
         with self.assertRaises(TypeError):
             dragon = Dragon(name="Wawelski")  # noqa
+
+    def test_init_no_name(self):
+        with self.assertRaises(TypeError):
+            Dragon()  # noqa
